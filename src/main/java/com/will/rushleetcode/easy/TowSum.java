@@ -7,10 +7,9 @@ package com.will.rushleetcode.easy;
  * @Date: 2021/12/2 9:55
  **/
 public class TowSum {
-    public int[] towSum(int[] nums, int target){
+    public static int[] towSum(int[] nums, int target){
         int [] result = new int[2];
         for (int i=0; i<nums.length;i++){
-            if (nums[i]>target) continue;
             int num2 = target-nums[i];
             for (int j=i+1;j<nums.length;j++){
                 if (num2==nums[j]){
@@ -20,5 +19,11 @@ public class TowSum {
             }
         }
         return result;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = new int[]{-1,-2,-3,-4,-5};
+        int target = -8;
+        System.out.println(towSum(nums, target));
     }
 }
